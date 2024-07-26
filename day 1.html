@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Classes</h1>
+<p id="demo"></p>
+<script>
+class Student {
+constructor(name, year, maths, science, english) {
+this.name = name;
+this.year = year;
+this.maths = maths;
+this.science = science;
+this.english = english;
+}
+calculateAverage() {
+return (this.maths + this.science + this.english) / 3;
+}
+}
+let students = [];
+for (let i = 1; i <= 2; i++) {
+let name = prompt(`Enter name ${i}:`);
+let year = prompt(`Enter year for ${name}:`);
+let maths = parseInt(prompt(`Enter maths marks for ${name}:`));
+let science = parseInt(prompt(`Enter science marks for ${name}:`));
+let english = parseInt(prompt(`Enter english marks for ${name}:`));
+let student = new Student(name, year, maths, science, english);
+students.push(student);
+}
+let output = "";
+for (let student of students) {
+output += `Name: ${student.name}, Year: ${student.year}, Average:
+${student.calculateAverage()}<br>`;
+}
+document.getElementById("demo").innerHTML = output;
+</script>
+</body>
+</html>
